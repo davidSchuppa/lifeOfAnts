@@ -1,32 +1,19 @@
 import java.util.Arrays;
 
-public class Ant {
+public abstract class Ant {
 
-    private String name;
     private int positionX;
     private int positionY;
-    private int[] startingPosition;
-    private static int[] queenPosition = {0, 0};
-    private static boolean isThereAWasp = false;
 
 
     public Ant() {
     }
 
-    public Ant(String name, int positionX, int positionY, int[] startingPosition) {
-        this.name = name;
+    public Ant(int positionX, int positionY) {
         this.positionX = positionX;
         this.positionY = positionY;
-        this.startingPosition = startingPosition;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getPositionX() {
         return positionX;
@@ -44,7 +31,4 @@ public class Ant {
         this.positionY = positionY;
     }
 
-    public int[] getStartingPosition() {
-        return startingPosition;
-    }
 }
