@@ -9,9 +9,12 @@ public class Main {
 
         List<Ant> ants = colony.getAnts();
 
-        for(Ant ant : ants){
-            System.out.println("Drone position x: " +ant.getPositionX() +
-                    ", position y: " + ant.getPositionY());
+        for(int i = 0; i < Colony.getSTEPS(); i++){
+            for(Ant ant : ants){
+                System.out.println(ant.getClass().getSimpleName() + " position x: " +ant.getPositionX() +
+                        ", position y: " + ant.getPositionY());
+                ant.step();
+            }
         }
 
 

@@ -1,2 +1,2 @@
-public class Worker extends Ant {
+public class Worker {
 }

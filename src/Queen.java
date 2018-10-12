@@ -10,4 +10,22 @@ public class Queen extends Ant{
     public boolean isInMood() {
         return isInMood;
     }
+
+    public int getPosX() {
+        return posX;
+    }
+
+    public int getPosY() {
+        return posY;
+    }
+
+    @Override
+    public void step() {
+        System.out.println("standing still");
+    }
+
+
+//    public void tryMating(){
+//        System.out.println("I'm trying!!!");
+//    }
 }
