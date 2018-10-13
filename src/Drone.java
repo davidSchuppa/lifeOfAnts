@@ -1,28 +1,29 @@
 public class Drone extends Ant {
 
     private static final int MATING_DISTANCE = 3;
-    private static final int KICKAWAY_STEPS = 100;
+    private static final int KICKAWAY_STEPS = 10;
     private int matingCounter;
     private Queen queen;
-    private boolean isMating;
 
     public Drone(int positionX, int positionY, Queen queen) {
         super.setPositionX(positionX);
         super.setPositionY(positionY);
         this.queen = queen;
-        matingCounter = 10;
-        isMating = false;
     }
 
     public void setPositionX(){
         if(this.getPositionX() >= MATING_DISTANCE){
             super.setPositionX(-1);
+        } else {
+            super.setPositionX(1);
         }
     }
 
     public void setPositionY(){
-        if(this.getPositionY() >= MATING_DISTANCE){
+        if(this.getPositionY() + this.getPositionX() >= MATING_DISTANCE){
             super.setPositionY(-1);
+        } else {
+            super.setPositionY(1);
         }
     }
 
@@ -38,14 +39,22 @@ public class Drone extends Ant {
     }
 
     public void tryMating() {
-        if (queen.isInMood() && matingCounter > 0){
-            isMating = true;
+        if (queen.isInMood()){
             System.out.println("HALLELUJAH");
+            this.matingCounter = 10;
+            queen.setInMood(false);
             matingCounter--;
-        } else{
+        } else if (matingCounter > 0){
+            matingCounter--;
+        }
+        else if (matingCounter == 0){
+            kickAway();
+        }
+        else{
             kickAway();
         }
     }
+
 
     public void kickAway(){
         int newX = Colony.getRandom().nextInt(KICKAWAY_STEPS);

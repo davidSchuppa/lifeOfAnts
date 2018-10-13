@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Colony {
-    private static final int STEPS = 30;
+    private static final int STEPS = 200;
     private static int INSTANCES = 3;
     private int xGrid;
     private int yGrid;
