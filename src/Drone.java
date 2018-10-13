@@ -51,6 +51,7 @@ public class Drone extends Ant {
             kickAway();
         }
         else{
+            System.out.println("D'OH");
             kickAway();
         }
     }

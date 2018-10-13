@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Colony {
-    private static final int STEPS = 200;
+    private static final int STEPS = 10;
     private static int INSTANCES = 3;
     private int xGrid;
     private int yGrid;
@@ -28,19 +28,13 @@ public class Colony {
         return random;
     }
 
-    public int getxGrid() {
-        return xGrid;
-    }
-
-    public int getyGrid() {
-        return yGrid;
-    }
 
     public void initAnts(){
         for(int i = 0; i < INSTANCES; i++){
-            ants.add(new Drone(random.nextInt(xGrid), random.nextInt(yGrid), queen));
+            ants.add(new Worker(random.nextInt(xGrid), random.nextInt(yGrid)));
+//          ants.add(new Drone(random.nextInt(xGrid), random.nextInt(yGrid), queen));
         }
-        ants.add(queen);
+//        ants.add(queen);
     }
 
     public List<Ant> getAnts() {

@@ -14,6 +14,7 @@ public abstract class Ant {
         this.positionY = positionY;
     }
 
+    public abstract void step();
 
     public int getPositionX() {
         return positionX;
@@ -30,8 +31,6 @@ public abstract class Ant {
     public void setPositionY(int positionY) {
         this.positionY += positionY;
     }
-
-    public abstract void step();
 
 
     public int getDistanceFrom(Ant otherAnt) {
