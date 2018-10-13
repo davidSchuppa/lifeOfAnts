@@ -1,7 +1,3 @@
-/*
-Makes one step randomly in one of the directions
- */
-
 public class Worker extends Ant {
     private Direction[] directions = Direction.values();
 

@@ -17,14 +17,6 @@ public class Queen extends Ant{
         return isInMood;
     }
 
-//    public int getPosX() {
-//        return posX;
-//    }
-//
-//    public int getPosY() {
-//        return posY;
-//    }
-
     @Override
     public void step() {
         matingtTimer--;
@@ -43,8 +35,4 @@ public class Queen extends Ant{
         System.out.println(randInt);
         this.matingtTimer = randInt;
     }
-
-    //    public void tryMating(){
-//        System.out.println("I'm trying!!!");
-//    }
 }

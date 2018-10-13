@@ -31,10 +31,11 @@ public class Colony {
 
     public void initAnts(){
         for(int i = 0; i < INSTANCES; i++){
+            ants.add(new Soldier(random.nextInt(xGrid), random.nextInt(yGrid)));
             ants.add(new Worker(random.nextInt(xGrid), random.nextInt(yGrid)));
-//          ants.add(new Drone(random.nextInt(xGrid), random.nextInt(yGrid), queen));
+          ants.add(new Drone(random.nextInt(xGrid), random.nextInt(yGrid), queen));
         }
-//        ants.add(queen);
+        ants.add(queen);
     }
 
     public List<Ant> getAnts() {
