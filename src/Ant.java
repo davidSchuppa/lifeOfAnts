@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public abstract class Ant {
 
     private int positionX;
